@@ -1,0 +1,13 @@
+POST http://localhost:4500/user HTTP/2.0
+Content-Type: application/json
+
+{
+    "email": "teste@teste.com",
+    "name": "teste",
+    "password": "321"
+}
+
+###
+
+GET http://localhost:4500/user/d748ed5f-6e85-4b7a-a7d2-61a15192443d HTTP/2.1
+Content-Type: application/json
