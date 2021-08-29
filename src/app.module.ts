@@ -3,10 +3,12 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/entities/user.entity';
 import { UserModule } from './user/user.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
     UserModule,
+    ProductModule,
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
@@ -18,8 +20,6 @@ import { UserModule } from './user/user.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: (process.env.TYPEORM_SYNCHRONIZE === 'true'),
     }),
-    TypeOrmModule.forFeature([User]),
-    
   ],
   controllers: [],
   providers: [],

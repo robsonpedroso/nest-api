@@ -1,5 +1,11 @@
-POST http://localhost:4500/user HTTP/2.0
-Content-Type: application/json
+@hostname = http://localhost
+@port = 4500
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+# @name NewUser
+POST {{host}}/user HTTP/1.1
+Content-Type: {{contentType}}
 
 {
     "email": "teste@teste.com",
@@ -9,5 +15,19 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:4500/user/d748ed5f-6e85-4b7a-a7d2-61a15192443d HTTP/2.1
-Content-Type: application/json
+# @name GetUser
+GET {{host}}/user/d748ed5f-6e85-4b7a-a7d2-61a15192443d HTTP/1.1
+Content-Type: {{contentType}}
+
+###
+
+# @name DeleteUser
+DELETE {{host}}/user/d748ed5f-6e85-4b7a-a7d2-61a15192443d HTTP/1.1
+Content-Type: {{contentType}}
+
+###
+
+# @name GetAll
+GET {{host}}/user HTTP/1.1
+Content-Type: {{contentType}}
+

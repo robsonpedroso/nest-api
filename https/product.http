@@ -1,0 +1,35 @@
+@hostname = http://localhost
+@port = 4500
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+#
+POST {{host}}/product HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "title": "Produto 2",
+    "subtitle": "Produto 2 teste",
+    "detail": "Esse é um produto de teste de numero 2",
+    "summary": "Produto de teste numero 2",
+    "price": 45
+}
+
+###
+
+# @name GetProduct
+GET {{host}}/product/3cbd7e4f-273a-4e25-a92f-1b1ca6a3d860 HTTP/1.1
+Content-Type: {{contentType}}
+
+###
+
+# @name DeleteProduct
+DELETE {{host}}/product/3cbd7e4f-273a-4e25-a92f-1b1ca6a3d860 HTTP/1.1
+Content-Type: {{contentType}}
+
+###
+
+# @name GetAll
+GET {{host}}/product HTTP/1.1
+Content-Type: {{contentType}}
+
