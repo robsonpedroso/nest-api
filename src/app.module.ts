@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/entities/user.entity';
 import { UserModule } from './user/user.module';
 import { ProductModule } from './product/product.module';
+import { JphModule } from './jph/jph.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ProductModule } from './product/product.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: (process.env.TYPEORM_SYNCHRONIZE === 'true'),
     }),
+    JphModule,
   ],
   controllers: [],
   providers: [],
